@@ -7,6 +7,9 @@
 //
 
 #import "CMAppDelegate.h"
+#import "CMTextViewController.h"
+
+//@interface CMTextViewController;
 
 @implementation CMAppDelegate
 
@@ -14,6 +17,12 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    CMTextViewController *textViewController = [[CMTextViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:textViewController];
+    
+    self.window.rootViewController = navigationController;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
